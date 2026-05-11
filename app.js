@@ -197,7 +197,7 @@ function summarizeTitle(text) {
 }
 
 async function renderAllResults(nameA, nameB) {
-  const ids = GAME_OPTIONS.map((g) => g.id);
+  const ids = GAME_OPTIONS.map((g) => g.id).filter((id) => id !== ALL_RESULTS_ID);
   const games = await Promise.all(ids.map((id) => ensureGameLoaded(id)));
   const validGames = games.filter(Boolean);
 
