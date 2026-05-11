@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#ff5f6d" />
+    <meta
+      name="description"
+      content="Play name-based mini games instantly on mobile with shareable results."
+    />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/icons/icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Sora:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Name Arcade</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1" aria-hidden="true"></div>
+    <div class="bg-orb orb-2" aria-hidden="true"></div>
+
+    <main class="app-shell">
+      <header class="hero">
+        <p class="pill">Simple Name Games</p>
+        <h1>Name Arcade</h1>
+        <p class="subtitle">Pick a game, enter names, get instant results.</p>
+      </header>
+
+      <section class="game-picker" aria-label="Game selector">
+        <label for="gameSelect">Choose game</label>
+        <div class="game-select-shell">
+          <select id="gameSelect" name="gameSelect">
+            <option value="flames">FLAMES</option>
+            <option value="compat">Compatibility</option>
+            <option value="ship">Ship Name</option>
+            <option value="lucky">Lucky Letter</option>
+            <option value="numerology">Numerology Lite</option>
+            <option value="initials">Initials Chemistry</option>
+            <option value="anagram">Anagram Sprint</option>
+            <option value="battle">Name Battle</option>
+            <option value="all">All Results (Quick View)</option>
+          </select>
+          <span class="select-caret" aria-hidden="true">▾</span>
+        </div>
+      </section>
+
+      <section class="panel input-panel" aria-label="Name game checker">
+        <label id="labelOne" for="nameOne">Your Name</label>
+        <input id="nameOne" name="nameOne" maxlength="40" placeholder="Drop your name" autocomplete="off" />
+
+        <label id="labelTwo" for="nameTwo">Their Name</label>
+        <input id="nameTwo" name="nameTwo" maxlength="40" placeholder="Drop their name" autocomplete="off" />
+
+        <div class="action-row">
+          <button id="checkBtn" class="action-btn" type="button">Get Result</button>
+        </div>
+        <p id="hint" class="hint">For fun only. No drama guaranteed.</p>
+      </section>
+
+      <section id="resultPanel" class="panel result-panel hidden" aria-live="polite">
+        <div class="result-head">
+          <p id="resultTag" class="result-tag">Result</p>
+          <h2 id="resultTitle">Friends</h2>
+          <p id="resultLine" class="result-line">You two are in your buddy era.</p>
+        </div>
+
+        <div class="gif-wrap">
+          <img id="resultGif" src="" alt="Result animation" loading="lazy" />
+        </div>
+
+        <div class="names-chip" id="namesChip">Name A + Name B</div>
+
+        <div class="result-actions">
+          <button id="shareBtn" class="ghost-btn" type="button">Share</button>
+          <details class="more-actions">
+            <summary>More</summary>
+            <button id="downloadCardBtn" class="ghost-btn" type="button">Download Card</button>
+          </details>
+        </div>
+      </section>
+
+      <section id="allResultPanel" class="panel all-result-panel hidden" aria-live="polite">
+        <div class="result-head">
+          <p class="result-tag">All Games Summary</p>
+          <h2 id="allResultTitle">Quick Results</h2>
+          <p class="result-line">One view, all outcomes.</p>
+        </div>
+        <div id="allResultNames" class="names-chip">Name A + Name B</div>
+        <ul id="allResultList" class="all-result-list"></ul>
+      </section>
+
+      <button id="installBtn" class="install-btn hidden" type="button">Install App</button>
+      <canvas id="shareCanvas" width="1080" height="1350" aria-hidden="true"></canvas>
+      <section id="chatPanel" class="chat-panel hidden" aria-live="polite" aria-label="Basic help chatbot">
+        <header class="chat-head">
+          <h3>Name Arcade Guide</h3>
+          <button id="chatClose" type="button" aria-label="Close chat">x</button>
+        </header>
+        <div id="chatMessages" class="chat-messages">
+          <div id="chatSuggestions" class="chat-suggestions" aria-label="Suggested questions"></div>
+        </div>
+        <form id="chatForm" class="chat-form">
+          <input id="chatInput" type="text" maxlength="140" placeholder="Ask: which game should I try?" autocomplete="off" />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
+      <footer class="utility-bar">
+        <button id="chatToggle" class="utility-link" type="button" aria-label="Open help chat">Help Bot</button>
+        <a class="made-by" href="https://www.linkedin.com/in/hemanthkhrv/" target="_blank" rel="noopener noreferrer" aria-label="Creator LinkedIn">Made by KHRV</a>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="FLAMES art">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff8da1" />
+      <stop offset="100%" stop-color="#ffb36c" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#g)" />
+  <circle cx="210" cy="170" r="120" fill="#ffffff33" />
+  <circle cx="960" cy="540" r="170" fill="#ffffff26" />
+  <text x="600" y="320" text-anchor="middle" fill="#fff" font-size="120" font-family="Sora, Trebuchet MS, sans-serif" font-weight="700">FLAMES</text>
+  <text x="600" y="405" text-anchor="middle" fill="#fff" font-size="44" font-family="Sora, Trebuchet MS, sans-serif">Friends · Love · Affection · Marriage · Enemies · Siblings</text>
+</svg>
